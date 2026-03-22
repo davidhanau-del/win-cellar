@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    @apply bg-cave-bg text-cave-cream h-full;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #2e2040 transparent;
+  }
+  *::-webkit-scrollbar { width: 5px; height: 5px; }
+  *::-webkit-scrollbar-track { background: transparent; }
+  *::-webkit-scrollbar-thumb { @apply bg-cave-subtle rounded-full; }
+}
+
+@layer components {
+  .input {
+    @apply w-full bg-cave-surface border border-cave-border rounded-lg px-3 py-2 text-sm text-cave-cream
+           placeholder-cave-muted
+           focus:outline-none focus:ring-1 focus:ring-cave-gold focus:border-cave-gold
+           transition-colors;
+  }
+
+  .btn-primary {
+    @apply flex items-center gap-2 bg-cave-wine text-cave-cream px-4 py-2 rounded-lg text-sm
+           hover:bg-cave-wine-light transition-colors font-medium;
+  }
+
+  .btn-ghost {
+    @apply flex items-center gap-2 border border-cave-border text-cave-muted px-4 py-2 rounded-lg text-sm
+           hover:border-cave-gold hover:text-cave-gold transition-colors;
+  }
+
+  .card {
+    @apply bg-cave-surface border border-cave-border rounded-xl shadow-card
+           hover:shadow-card-hover hover:border-cave-subtle transition-all;
+  }
+
+  .page-header {
+    @apply px-6 py-4 border-b border-cave-border bg-cave-surface flex items-center justify-between;
+  }
+
+  .page-title {
+    @apply text-lg font-semibold text-cave-cream tracking-wide;
+  }
+
+  .badge {
+    @apply text-xs px-2 py-0.5 rounded-full font-medium;
+  }
+
+  .divider {
+    @apply border-cave-border;
+  }
+}
